@@ -1,0 +1,24 @@
+<section class="login">
+    <div class="tela-login">
+        <img src="../../assets/images/celular2.jpg" class="celular" alt="">
+        <div class="usuario-login">
+        <h1>TRANSFERENCIA IBANK</h1>
+        
+        
+       
+        <p class="texto-usuario-login">Numero da conta a retirar</p>
+        <input type="text" [value]="numeroConta" (keyup)="digitouNumero($event)">
+        <hr>
+        <p class="texto-usuario-login">Numero da conta a transferir</p>
+        <input type="text" [value]="numeroTranferencia" (keyup)="digitouTranferencia($event)">
+        <hr>
+        <p>Saldo Disponivel</p>
+        <hr>
+        <p>Valor a Transferir: R$</p>
+        <input type="number" [value]="TransferirValor" (keyup)="digitouValor($event)">
+        <hr>
+        <button (click)="confirmarDados()" type="ngsubmit" class="btn-logar">Confirmar</button>
+        </div>
+    </div>
+
+</section>
