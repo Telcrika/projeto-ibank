@@ -10,14 +10,15 @@
         <input type="text" [value]="numeroConta" (keyup)="digitouNumero($event)">
         <hr>
         <p class="texto-usuario-login">Numero da conta a transferir</p>
-        <input type="text" [value]="numeroTranferencia" (keyup)="digitouTranferencia($event)">
+        <input type="text" [value]="numeroTransferencia" (keyup)="digitouTransferencia($event)">
         <hr>
         <p>Saldo Disponivel</p>
         <hr>
-        <p>Valor a Transferir: R$</p>
-        <input type="number" [value]="TransferirValor" (keyup)="digitouValor($event)">
+        <p>Valor a Transferir: </p>
+        <input type="double" id="valorInput" [value]="transferirValor" (keyup)="digitouValor($event)">
         <hr>
-        <button (click)="confirmarDados()" type="ngsubmit" class="btn-logar">Confirmar</button>
+        <p>Revise os dados e confirme ao clicar no botão<p>
+        <button (click)="transacaoUsuario()" type="ngsubmit" class="btn-logar">Confirmar</button>
         </div>
     </div>
 
