@@ -6,19 +6,20 @@
         
         
        
-        <p class="texto-usuario-login">Numero da conta a retirar</p>
+        <p class="texto-usuario-login">Numero da conta para retirar</p>
         <input type="text" [value]="numeroConta" (keyup)="digitouNumero($event)">
         <hr>
-        <p class="texto-usuario-login">Numero da conta a transferir</p>
+        <p class="texto-usuario-login">Numero da conta para transferir</p>
         <input type="text" [value]="numeroTransferencia" (keyup)="digitouTransferencia($event)">
         <hr>
-        <p>Saldo Disponivel</p>
+        <p>Saldo Disponivel:</p>
+        
         <hr>
         <p>Valor a Transferir: </p>
-        <input type="double" id="valorInput" [value]="transferirValor" (keyup)="digitouValor($event)">
+        <input type="double" ng-model="valorTransferencia"  (keyup)="digitouValor($event)">
         <hr>
-        <p>Revise os dados e confirme ao clicar no botão<p>
-        <button (click)="transacaoUsuario()" type="ngsubmit" class="btn-logar">Confirmar</button>
+        <p>Revise os dados e confirme antes de clicar no botão<p>
+        <button  type="ngsubmit" class="btn-logar">Confirmar Transferencia</button>
         </div>
     </div>
 

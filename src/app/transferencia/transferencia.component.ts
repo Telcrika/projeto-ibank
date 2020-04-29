@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-transferencia',
@@ -9,29 +10,30 @@ export class TransferenciaComponent implements OnInit {
 
   numeroConta = '';
   numeroTransferencia = '';
-  transferirValor = '';
-  saldo = '';
+  valorTransferencia ='';
+  
 
-  constructor() { }
+  cliente = {};
+  
+
+  constructor(private http:HttpClient) { }
 
   ngOnInit(): void {
   }
   confirmarDados(){
     console.log ('Babú perdeu o Big Brother');
-    /*this.http.post("http://localhost:57434/api/clientes/login", {
-      Conta: this.numeroConta,
-      transferencia: this.numeroTransferencia,
-      valor: this.transferirValor
-    }).subscribe((dados: any)=>{
-      this.cliente = dados;
-      console.log(this.cliente)
-    });*/
+    this.http.post("https://ibank20200429031242.azurewebsites.net/api/transfers", {
+      IdCliente: this.numeroConta,
+      IdDestinatario: this.numeroTransferencia,
+      ValorDeposito:this.valorTransferencia
+      
+    });
      
     
 
   }
 
-  valorInput = document.getElementById("valorInput");
+ 
   
   
 
@@ -42,25 +44,16 @@ export class TransferenciaComponent implements OnInit {
 
   digitouTransferencia($event){
     this.numeroTransferencia = $event.target.value;
-    console.log($event.target.value);
+     
+    
   }
 
   digitouValor($event){
-    this.transferirValor = $event.target.value;
-    console.log($event.target.value);
+    this.valorTransferencia = $event.target.value;
+    
   }
 
-  transacaoUsuario() {
-    var saldo = 500;
-    
-    var transferirValor = 300;
-    var novoSaldo = saldo - transferirValor;
-    console.log("seu novo saldo e: ",novoSaldo);
-    alert ("A sua transferência foi feita com sucesso!")
-
-   
- }
-
+ 
   
 
 
